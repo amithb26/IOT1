@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CQT Smarthome App</title>
+        <!--The <meta> tag provides metadata about the HTML document. 
+        Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
+        charset : Specifies the character encoding used in an external script file
+        viewport :This element gives the browser instructions on how to control the page's dimensions and scaling.
+           The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the            device).
+           The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+        -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ 
+        <!--The <link> tag defines a link between a document and an external resource.
+            rel : Specifies the relationship between the current document and the linked document
+            href : Specifies the location of the linked document-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+
+
+        <!--  MQTT-->
+        <!--script tag points to an external script file through src attribute 
+            Specifies the URL of an external script file-->
+         <script src="js/iot-nodejs/dist/iotf-client-bundle.js"></script>
+        
+
+        <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   		<script src="js/index.js"></script>
+		
+        <!-- require.js -->
+        
+        <script src="js/require.js"></script>
+   		
+        <script type="text/javascript"> 
+        	$(document).ready(function(){
+
+        		require.config({
+
+	              baseUrl : './js' ,
+
+	                paths: {
+
+	                    requirejs: 'require',
+	                    ibmiotf : 'iot-nodejs/dist/iotf-client-bundle.min'
+
+	                }
+
+	            });
+
+        		
+
+        		require(['ibmiotf'], function(iotf){
+        			app.initialize();
+	
+        		})
+
+        		
+        			
+        	})
+        	
+        </script>
+        
+    </head>
+    <body>
+        <div data-role="page" id="mainpage" >
+            <div data-role="header" >
+                <p align="center">Temperature and Humidity Levels</p>
+            </div>   
+        
+            <div data-role="main" class="ui-content">
+                <div class="container" align="center">
+                    <table id="sensor001" width="142" height="50">
+                      <tr>
+                        <td>Temperature:</td>
+                        <td id="temp001"></td>
+                     </tr>
+                     <tr>
+                       <td>Humidity:</td>
+                       <td id="humid001"></td>
+                     </tr>
+		     <tr>
+                       <td>Soil_Moisture:</td>
+                       <td id="soilMois001"></td>
+                     </tr>
+		     <tr>
+                       <td>Soil_Temperature:</td>
+                       <td id="soilTemp001"></td>
+                     </tr>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

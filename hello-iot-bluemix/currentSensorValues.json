@@ -1,0 +1,28 @@
+{
+   "Devices":{
+      "RASPBERRY_PI":{
+         "air_temperature":"45deg",
+         "soil_temperature":"20deg",
+         "humidity":"50%",
+         "soil_moisture":"70%"
+      },
+      "Device1":{
+         "air_temperature":"40deg",
+         "soil_temperature":"20deg",
+         "humidity":"50%",
+         "soil_moisture":"80%"
+      },
+      "Device2":{
+         "air_temperature":"28deg",
+         "soil_temperature":"45deg",
+         "humidity":"60%",
+         "soil_moisture":"20%"
+      },
+      "Device3":{
+         "air_temperature":"30deg",
+         "soil_temperature":"25deg",
+         "humidity":"10%",
+         "soil_moisture":"20%"
+      }
+   }
+}
