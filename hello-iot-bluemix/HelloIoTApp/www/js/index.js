@@ -77,10 +77,13 @@ var app = {
        
        console.log('connected');
         appClient.on('connect', function () {
-            
-            appClient.subscribeToDeviceEvents("raspberry_pi");
+            var Devices = ["raspberry_pi", "device1","device2","device3"];
+            for (device in Devices)
+           {
+            console.log("*********************** " +Devices[device] + "*************************");
+            appClient.subscribeToDeviceEvents(Devices[device]);
             app.subscribe();
-
+          }
              
     	});
         
@@ -93,13 +96,30 @@ var app = {
     FUNCTION NAME : sensordisplay()
     DESCRIPTION   : displays temperature and humidity levels
 ****************************************************************************************************/ 
-    sensordisplay:function(Air_temperature, humidity, soil_moisture, soil_temperature) {
-        $temp = $("#temp001");
-        $humid = $("#humid001");
-        $soil_moisture = $("#soilMois001");
-        $soil_temp = $("#soilTemp001");
-       // $temp[0].innerText = '' + temperature.toFixed(2) + '°C';
-       // $humid[0].innerText = '' + humidity.toFixed(2) + '%';
+    sensordisplay:function(Air_temperature, humidity, soil_moisture, soil_temperature,deviceType) {
+        console.log("In sensor display");
+        $temp = $("#temp001" + "_" + deviceType);
+        $humid = $("#humid001"+ "_" + deviceType);
+        $soil_moisture = $("#soilMois001"+ "_" + deviceType);
+        $soil_temp = $("#soilTemp001"+ "_" + deviceType);
+        $temp[0].innerText = '' + Air_temperature;
+        $humid[0].innerText = '' + humidity;
+        $soil_moisture[0].innerText = '' + soil_moisture;
+        $soil_temp[0].innerText = '' + soil_temperature; 
+    },
+
+    sensorCriticalValues:function(Alert,eventType) {
+        console.log("In sensor CriticalValues");
+        var alerts = [] 
+        //if (eventType == "TempCritical")
+        alerts.push(Alert)
+      //  else if (eventType == "SoilTempCritical")
+       // else if (eventType == "HumidityCritical")
+        //else if (eventType == "SoilMoistureCritical")
+        $Criticals = $("#critical");
+        for (i in alerts){
+        $Criticals[i].innerText = alerts;
+        }
     },
 
 
@@ -110,10 +130,14 @@ var app = {
         console.log('got a message');
         console.log("Device Event from :: "+deviceType+" : "+deviceId+" of event "+eventType+" with payload : "+payload);
         var parsed = JSON.parse(payload);
-        console.log(parsed.Air_temperature, parsed.humidity, parsed.soil_moisture, parsed.soil_temperature); 
-        
-        app.sensordisplay(parsed.Air_temperature, parsed.humidity, parsed.soil_moisture, parsed.soil_temperature);
-         
+        console.log(parsed.Air_temperature);
+        console.log(parsed.humidity);
+        console.log(parsed.soil_moisture);
+        console.log(parsed.soil_temperature);
+        if (eventType == "sensor_data")
+        app.sensordisplay(parsed.Air_temperature, parsed.humidity, parsed.soil_moisture, parsed.soil_temperature,deviceType);
+        else
+        app.sensorCriticalValues(parsed.Alert, eventType)
         
     });
 

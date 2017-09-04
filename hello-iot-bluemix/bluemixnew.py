@@ -72,11 +72,11 @@ Parameters 		:	deviceType - device type as registered in IBM Bluemix
                                         message     - Data to be published to bluemix
 ****************************************************************************************'''
 
-def publishMsg(deviceType, deviceId, device,message):
+def publishMsg(event,deviceType, deviceId, device,message):
     global client
     try:
         # publish the message to IBM Bluemix
-	pubReturn = client.publishEvent(deviceType, deviceId, "status", "json", message)
+	pubReturn = client.publishEvent(deviceType, deviceId, event, "json", message)
 	if pubReturn == True:
 	    logging.info("The message successfully sent from %s"%device)
     except Exception  as e:
@@ -115,21 +115,24 @@ def sensorLoop():
                 currentSoilMoisture = current["soil_moisture"]
 		sensorReadingTime = datetime.datetime.now()
 		message = {"ID":1,"Air_temperature": currentAirTemperature, "humidity":currentHumidity, "soil_moisture":currentSoilMoisture , "soil_temperature":currentSoilTemperature , "Description" : "Values from " + device}
-        	publishMsg(deviceType,deviceId,device,message)
+                event = "sensor_data"
+        	publishMsg(event,deviceType,deviceId,device,message)
 				
                 if currentAirTemperature >= CRITICAL_AIR_TEMPERATURE:
 		    criticalLevelReachedTime = datetime.datetime.now()
                     messageBody = "Critical temperature reached for %s at %s"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
-                    publishMsg(deviceType,deviceId,device,message)
+                    TempCritical = "TempCritical"
+                    publishMsg(TempCritical,deviceType,deviceId,device,message)
 
                 if currentSoilTemperature >= CRITICAL_SOIL_TEMPERATURE:
 	       	    criticalLevelReachedTime = datetime.datetime.now()
                     messageBody = "Critical soil temperature reached for %s at %s"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
-                    publishMsg(deviceType,deviceId,device,message)
+                    SoilTempCritical = "SoilTempCritical"
+                    publishMsg(SoilTempCritical,deviceType,deviceId,device,message)
 
 				
                 if currentHumidity >= CRITICAL_HUMIDITY_PERCENTAGE:
@@ -137,14 +140,16 @@ def sensorLoop():
                     messageBody = "Critical humidity percentage reached for %s at %s"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
-                    publishMsg(deviceType,deviceId,device,message)
+                    HumidityCritical = "HumidityCritical"
+                    publishMsg(HumidityCritical,deviceType,deviceId,device,message)
 
                 if currentSoilMoisture <= CRITICAL_SOIL_MOISTURE_LEVEL:
 		    criticalLevelReachedTime = datetime.datetime.now()
                     messageBody = "Critical soil moisture level reached for  %s at %s, Please water the plants"%(device,criticalLevelReachedTime)
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
-                    publishMsg(deviceType,deviceId,device,message)
+                    SoilMoistureCritical = "SoilMoistureCritical"
+                    publishMsg(SoilMoistureCritical,deviceType,deviceId,device,message)
      	        count = count -1		
     #except Exception as e:
       #  logging.info("This Exception")
