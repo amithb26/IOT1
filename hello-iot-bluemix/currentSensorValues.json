@@ -3,7 +3,7 @@
       "RASPBERRY_PI":{
          "Ambient_temperature":"45deg",
          "Light_Intensity":"50",
-         "Fertilzer_Level":"50",
+         "Fertilizer_Level":"50",
          "Soil_moisture":"70%"
       },
       "Device1":{
@@ -15,7 +15,7 @@
       "Device2":{
          "Ambient_temperature":"28deg",
          "Light_Intensity":"45",
-         "FertilizerLevel":"60",
+         "Fertilizer_Level":"60",
          "Soil_moisture":"20%"
       },
       "Device3":{

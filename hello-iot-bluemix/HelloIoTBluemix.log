@@ -168,3 +168,85 @@
 2017-09-06 15:34:48, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 878
 2017-09-06 15:34:49, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 881
 2017-09-06 15:34:51, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 907
+2017-09-06 18:14:37, INFO, Devices : [u'Device1', u'RASPBERRY_PI', u'Device3', u'Device2']
+2017-09-06 18:14:38, INFO, Connected successfully: a:o15j1s:Device1
+2017-09-06 18:14:38, INFO, IOTFconnection established for Device1
+2017-09-06 18:14:39, INFO, Connected successfully: a:o15j1s:RASPBERRY_PI
+2017-09-06 18:14:39, INFO, IOTFconnection established for RASPBERRY_PI
+2017-09-06 18:14:45, INFO, Connected successfully: a:o15j1s:Device3
+2017-09-06 18:14:45, INFO, IOTFconnection established for Device3
+2017-09-06 18:14:46, INFO, Connected successfully: a:o15j1s:Device2
+2017-09-06 18:14:46, INFO, IOTFconnection established for Device2
+2017-09-06 18:14:46, INFO, ************* Device1 ******************
+2017-09-06 18:14:46, INFO, ****In while for Device1 ****
+2017-09-06 18:14:48, DEBUG, Starting new HTTPS connection (1): api.twilio.com
+2017-09-06 18:14:49, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 873
+2017-09-06 18:14:50, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:14:50, INFO, ************* RASPBERRY_PI ******************
+2017-09-06 18:15:28, INFO, Devices : [u'Device1', u'RASPBERRY_PI', u'Device3', u'Device2']
+2017-09-06 18:15:28, INFO, Connected successfully: a:o15j1s:Device1
+2017-09-06 18:15:28, INFO, IOTFconnection established for Device1
+2017-09-06 18:15:29, INFO, Connected successfully: a:o15j1s:RASPBERRY_PI
+2017-09-06 18:15:29, INFO, IOTFconnection established for RASPBERRY_PI
+2017-09-06 18:15:30, INFO, Connected successfully: a:o15j1s:Device3
+2017-09-06 18:15:30, INFO, IOTFconnection established for Device3
+2017-09-06 18:15:32, INFO, Connected successfully: a:o15j1s:Device2
+2017-09-06 18:15:32, INFO, IOTFconnection established for Device2
+2017-09-06 18:15:32, INFO, ************* Device1 ******************
+2017-09-06 18:15:32, INFO, ****In while for Device1 ****
+2017-09-06 18:15:34, DEBUG, Starting new HTTPS connection (1): api.twilio.com
+2017-09-06 18:15:35, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 873
+2017-09-06 18:15:36, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:15:36, INFO, ************* RASPBERRY_PI ******************
+2017-09-06 18:16:39, INFO, Devices : [u'Device1', u'RASPBERRY_PI', u'Device3', u'Device2']
+2017-09-06 18:16:40, INFO, Connected successfully: a:o15j1s:Device1
+2017-09-06 18:16:40, INFO, IOTFconnection established for Device1
+2017-09-06 18:16:41, INFO, Connected successfully: a:o15j1s:RASPBERRY_PI
+2017-09-06 18:16:41, INFO, IOTFconnection established for RASPBERRY_PI
+2017-09-06 18:16:42, INFO, Connected successfully: a:o15j1s:Device3
+2017-09-06 18:16:42, INFO, IOTFconnection established for Device3
+2017-09-06 18:16:43, INFO, Connected successfully: a:o15j1s:Device2
+2017-09-06 18:16:43, INFO, IOTFconnection established for Device2
+2017-09-06 18:16:43, INFO, ************* Device1 ******************
+2017-09-06 18:16:43, INFO, ****In while for Device1 ****
+2017-09-06 18:16:45, DEBUG, Starting new HTTPS connection (1): api.twilio.com
+2017-09-06 18:16:47, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 873
+2017-09-06 18:16:48, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:16:48, INFO, ************* RASPBERRY_PI ******************
+2017-09-06 18:16:48, INFO, ****In while for RASPBERRY_PI ****
+2017-09-06 18:16:51, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 907
+2017-09-06 18:16:51, INFO, ************* Device3 ******************
+2017-09-06 18:16:51, INFO, ****In while for Device3 ****
+2017-09-06 18:16:53, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:16:54, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 913
+2017-09-06 18:16:54, INFO, ************* Device2 ******************
+2017-09-06 18:16:54, INFO, ****In while for Device2 ****
+2017-09-06 18:16:56, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 902
+2017-09-06 18:16:57, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:16:57, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 913
+2017-09-06 18:27:06, INFO, Devices : [u'Device1', u'RASPBERRY_PI', u'Device3', u'Device2']
+2017-09-06 18:27:06, INFO, Connected successfully: a:o15j1s:Device1
+2017-09-06 18:27:06, INFO, IOTFconnection established for Device1
+2017-09-06 18:27:07, INFO, Connected successfully: a:o15j1s:RASPBERRY_PI
+2017-09-06 18:27:07, INFO, IOTFconnection established for RASPBERRY_PI
+2017-09-06 18:27:08, INFO, Connected successfully: a:o15j1s:Device3
+2017-09-06 18:27:08, INFO, IOTFconnection established for Device3
+2017-09-06 18:27:09, INFO, Connected successfully: a:o15j1s:Device2
+2017-09-06 18:27:09, INFO, IOTFconnection established for Device2
+2017-09-06 18:27:09, INFO, ************* Device1 ******************
+2017-09-06 18:27:09, INFO, ****In while for Device1 ****
+2017-09-06 18:27:11, DEBUG, Starting new HTTPS connection (1): api.twilio.com
+2017-09-06 18:27:12, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 873
+2017-09-06 18:27:13, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:27:13, INFO, ************* RASPBERRY_PI ******************
+2017-09-06 18:27:13, INFO, ****In while for RASPBERRY_PI ****
+2017-09-06 18:27:15, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 907
+2017-09-06 18:27:15, INFO, ************* Device3 ******************
+2017-09-06 18:27:15, INFO, ****In while for Device3 ****
+2017-09-06 18:27:18, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:27:18, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 913
+2017-09-06 18:27:18, INFO, ************* Device2 ******************
+2017-09-06 18:27:18, INFO, ****In while for Device2 ****
+2017-09-06 18:27:21, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 902
+2017-09-06 18:27:21, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 938
+2017-09-06 18:27:22, DEBUG, https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACbbc1eadf2790da1085f3dd9047b52c11/Messages.json HTTP/1.1" 201 913
