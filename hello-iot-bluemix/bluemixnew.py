@@ -100,56 +100,56 @@ def sensorLoop():
             deviceId = data["Credentials"]["Devices"][device]["deviceId"]
             deviceType = data["Credentials"]["Devices"][device]["deviceType"]
             device_thresholds = threshold_data["Devices"][device]
-            CRITICAL_AIR_TEMPERATURE =  device_thresholds["air_temperature"]
-            CRITICAL_SOIL_TEMPERATURE = device_thresholds["soil_temperature"]
-            CRITICAL_HUMIDITY_PERCENTAGE = device_thresholds["humidity"]
-            CRITICAL_SOIL_MOISTURE_LEVEL = device_thresholds["soil_moisture"]
+            CRITICAL_AMBIENT_TEMPERATURE =  device_thresholds["Ambient_temperature"]
+            CRITICAL_LIGHT_INTENSITY = device_thresholds["Light_Intensity"]
+            CRITICAL_FERTILIZER_LEVEL = device_thresholds["Fertilizer_Level"]
+            CRITICAL_SOIL_MOISTURE_LEVEL = device_thresholds["Soil_moisture"]
             count =1
             while count == 1:
                 logging.info("****In while for %s ****"%device)
 		time.sleep(LOOP_SAMPLING_TIME)		
 		current = current_sensor_data["Devices"][device]
-                currentAirTemperature  = current["air_temperature"]
-                currentSoilTemperature = current["soil_temperature"]
-                currentHumidity = current["humidity"]    
-                currentSoilMoisture = current["soil_moisture"]
+                currentAmbientTemperature  = current["Ambient_temperature"]
+                currentLightIntensity = current["Light_Intensity"]
+                currentFertilizerLevel = current["Fertilizer_Level"]    
+                currentSoilMoisture = current["Soil_moisture"]
 		sensorReadingTime = datetime.datetime.now()
-		message = {"ID":1,"Air_temperature": currentAirTemperature, "humidity":currentHumidity, "soil_moisture":currentSoilMoisture , "soil_temperature":currentSoilTemperature , "Description" : "Values from " + device}
+		message = {"ID":1,"Ambient_temperature": currentAmbientTemperature, "FertilizerLevel":currentFertilizerLevel, "soil_moisture":currentSoilMoisture , "LightIntensity":currentLightIntensity , "Description" : "Values from " + device}
                 event = "sensor_data"
-        	publishMsg(event,deviceType,deviceId,device,message)
+#        	publishMsg(event,deviceType,deviceId,device,message)
 				
-                if currentAirTemperature >= CRITICAL_AIR_TEMPERATURE:
+                if currentAmbientTemperature >= CRITICAL_AMBIENT_TEMPERATURE:
 		    criticalLevelReachedTime = datetime.datetime.now()
                     messageBody = "Critical temperature reached for %s at %s"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     TempCritical = "TempCritical"
-                    publishMsg(TempCritical,deviceType,deviceId,device,message)
+ #                   publishMsg(TempCritical,deviceType,deviceId,device,message)
 
-                if currentSoilTemperature >= CRITICAL_SOIL_TEMPERATURE:
+                if currentLightIntensity >= CRITICAL_LIGHT_INTENSITY:
 	       	    criticalLevelReachedTime = datetime.datetime.now()
-                    messageBody = "Critical soil temperature reached for %s at %s"%(device,criticalLevelReachedTime) 
+                    messageBody = "Critical Light_Intensity level reached for %s at %s, Place me in shade"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     SoilTempCritical = "SoilTempCritical"
-                    publishMsg(SoilTempCritical,deviceType,deviceId,device,message)
+  #                  publishMsg(SoilTempCritical,deviceType,deviceId,device,message)
 
 				
-                if currentHumidity >= CRITICAL_HUMIDITY_PERCENTAGE:
+                if currentFertilizerLevel <=  CRITICAL_FERTILIZER_LEVEL:
 		    criticalLevelReachedTime = datetime.datetime.now()
-                    messageBody = "Critical humidity percentage reached for %s at %s"%(device,criticalLevelReachedTime) 
+                    messageBody = "Critical Fertilizer-Level reached for %s at %s, I miss my nutrients, Please provide me sufficient nutients"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     HumidityCritical = "HumidityCritical"
-                    publishMsg(HumidityCritical,deviceType,deviceId,device,message)
+   #                 publishMsg(HumidityCritical,deviceType,deviceId,device,message)
 
                 if currentSoilMoisture <= CRITICAL_SOIL_MOISTURE_LEVEL:
 		    criticalLevelReachedTime = datetime.datetime.now()
-                    messageBody = "Critical soil moisture level reached for  %s at %s, Please water the plants"%(device,criticalLevelReachedTime)
+                    messageBody = "Critical soil moisture level reached for  %s at %s, I am thirsty, Please water me"%(device,criticalLevelReachedTime)
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     SoilMoistureCritical = "SoilMoistureCritical"
-                    publishMsg(SoilMoistureCritical,deviceType,deviceId,device,message)
+    #                publishMsg(SoilMoistureCritical,deviceType,deviceId,device,message)
      	        count = count -1		
     #except Exception as e:
       #  logging.info("This Exception")

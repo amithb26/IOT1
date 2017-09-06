@@ -1,28 +1,28 @@
 {
    "Devices":{
       "RASPBERRY_PI":{
-         "air_temperature":"45deg",
-         "soil_temperature":"20deg",
-         "humidity":"50%",
-         "soil_moisture":"70%"
+         "Ambient_temperature":"45deg",
+         "Light_Intensity":"50",
+         "Fertilzer_Level":"50",
+         "Soil_moisture":"70%"
       },
       "Device1":{
-         "air_temperature":"40deg",
-         "soil_temperature":"20deg",
-         "humidity":"50%",
-         "soil_moisture":"80%"
+         "Ambient_temperature":"40deg",
+         "Light_Intensity":"20",
+         "Fertilizer_Level":"50",
+         "Soil_moisture":"80%"
       },
       "Device2":{
-         "air_temperature":"28deg",
-         "soil_temperature":"45deg",
-         "humidity":"60%",
-         "soil_moisture":"20%"
+         "Ambient_temperature":"28deg",
+         "Light_Intensity":"45",
+         "FertilizerLevel":"60",
+         "Soil_moisture":"20%"
       },
       "Device3":{
-         "air_temperature":"30deg",
-         "soil_temperature":"25deg",
-         "humidity":"10%",
-         "soil_moisture":"20%"
+         "Ambient_temperature":"30deg",
+         "Light_Intensity":"25",
+         "Fertilizer_Level":"10",
+         "Soil_moisture":"20%"
       }
    }
 }

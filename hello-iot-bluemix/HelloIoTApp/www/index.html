@@ -23,7 +23,9 @@
             Specifies the URL of an external script file-->
          <script src="js/iot-nodejs/dist/iotf-client-bundle.js"></script>
         
-
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="js/main.js"></script>
         <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
    		<script src="js/index.js"></script>
@@ -65,89 +67,92 @@
     <body>
         <div data-role="page" id="mainpage" >
             <div data-role="header" >
-                <p align="center">Temperature and Humidity Levels</p>
+                <p align="center">CQT-Gardener</p>
             </div>   
         
             <div data-role="main" class="ui-content">
                 <div class="container" align="center">
-                    <table id="sensor001" width="150" height="50">
-                      <tr>
-                           <td align="center">Raspberry_pi : POT1</td>
+                    <table id="sensor001">
+                    <tr>
+                           <td  colspan="3" align="center"><i><b>HibiscusPot</i></b></td>
                       </tr>
                       <tr>
-                        <td>Temperature:</td>
+                        <td rowspan="4"><img src="Hibiscus.jpg" alt=" " border=3 height=100 width=100 ></td>
+                        <td>Ambient_Temperature</td>
                         <td id="temp001_raspberry_pi"></td>
                      </tr>
                      <tr>
-                       <td>Humidity:</td>
+                       <td>Light_Intensity</td>
                        <td id="humid001_raspberry_pi"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Moisture:</td>
+                       <td>Soil_Moisture</td>
                        <td id="soilMois001_raspberry_pi"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Temperature:</td>
+                       <td>Fertilizer_Level</td>
                        <td id="soilTemp001_raspberry_pi"></td>
                      </tr>
-                     <tr> <td><br/></td></tr>
+                     <tr> <td colspan="3"><br/></td></tr>
                      <tr>
-                           <td align="center">Device1 : POT2</td>
+                           <td colspan="3" align="center"><i><b>LilyPot</i></b></td>
                       </tr>
                       <tr>
-                        <td>Temperature:</td>
+                      <td rowspan="4"><img src="Lily.jpg" alt=" " border=3 height=100 width=100 ></td>
+                       <td>Ambient_Temperature</td>
                         <td id="temp001_device1"></td>
                      </tr>
                      <tr>
-                       <td>Humidity:</td>
+                       <td>Light_Intensity</td>
                        <td id="humid001_device1"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Moisture:</td>
+                       <td>Soil_Moisture</td>
                        <td id="soilMois001_device1"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Temperature:</td>
+                       <td>Fertilizer_Level</td>
                        <td id="soilTemp001_device1"></td>
                      </tr>
-                    <tr> <td><br/></td></tr>
+                     <tr> <td colspan="3"><br/></td></tr>
                      <tr>
-                           <td align="center">Device2 : POT3</td>
+                           <td colspan="3"  align="center"><i><b>PeriwinklePot</i></b></td>
                       </tr>
                       <tr>
-                        <td>Temperature:</td>
+                      <td rowspan="4"><img src="Periwinkle.jpg" alt=" " border=3 height=100 width=100 ></td>
+                      <td>Ambient_Temperature</td>
                         <td id="temp001_device2"></td>
                      </tr>
                      <tr>
-                       <td>Humidity:</td>
+                       <td>Light_Intensity</td>
                        <td id="humid001_device2"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Moisture:</td>
+                       <td>Soil_Moisture</td>
                        <td id="soilMois001_device2"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Temperature:</td>
+                       <td>Fertilizer_Level</td>
                        <td id="soilTemp001_device2"></td>
                      </tr>
-                    <tr> <td><br/></td></tr>
+                     <tr> <td colspan="3"><br/></td></tr>
                      <tr>
-                           <td align="center">Device3 : POT4</td>
-                      </tr>
-                      <tr>
-                        <td>Temperature:</td>
+                    <td colspan="3"  align="center"><i><b>StrawberryPot</i></b></td>
+                      </tr><tr>
+                      <td rowspan="4"><img src="Strawberry.jpg" alt=" " border=3 height=100 width=100 ></td>
+                      <td>Ambient_Temperature</td>
                         <td id="temp001_device3"></td>
                      </tr>
                      <tr>
-                       <td>Humidity:</td>
+                       <td>Light_Intensity</td>
                        <td id="humid001_device3"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Moisture:</td>
+                       <td>Soil_Moisture</td>
                        <td id="soilMois001_device3"></td>
                      </tr>
 		     <tr>
-                       <td>Soil_Temperature:</td>
+                       <td>Fertilizer_Level</td>
                        <td id="soilTemp001_device3"></td>
                      </tr>
                   
@@ -157,7 +162,7 @@
                 </div>
             </div>
 
-        <div data-role="main" class="ui-content">
+    <!--    <div data-role="main" class="ui-content">
                 <div class="container" align="center">
                     <table id="Notification" width="150" height="50">
                       <tr>
@@ -168,7 +173,21 @@
                         <td id="#critical"></td>
                      </tr>
         </div> 
-        </div>
+        </div>-->
         </div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

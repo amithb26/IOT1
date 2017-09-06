@@ -96,16 +96,16 @@ var app = {
     FUNCTION NAME : sensordisplay()
     DESCRIPTION   : displays temperature and humidity levels
 ****************************************************************************************************/ 
-    sensordisplay:function(Air_temperature, humidity, soil_moisture, soil_temperature,deviceType) {
+    sensordisplay:function(Ambient_temperature,FertilizerLevel,soil_moisture, LightIntensity,deviceType) {
         console.log("In sensor display");
         $temp = $("#temp001" + "_" + deviceType);
-        $humid = $("#humid001"+ "_" + deviceType);
+        $fertLevel = $("#humid001"+ "_" + deviceType);
         $soil_moisture = $("#soilMois001"+ "_" + deviceType);
-        $soil_temp = $("#soilTemp001"+ "_" + deviceType);
-        $temp[0].innerText = '' + Air_temperature;
-        $humid[0].innerText = '' + humidity;
-        $soil_moisture[0].innerText = '' + soil_moisture;
-        $soil_temp[0].innerText = '' + soil_temperature; 
+        $lightIntensity = $("#soilTemp001"+ "_" + deviceType);
+        $temp[0].innerText = '' +Ambient_temperature ;
+        $humid[0].innerText = '' +FertilizerLevel;
+        $soil_moisture[0].innerText = '' +soil_moisture ;
+        $soil_temp[0].innerText = '' +LightIntensity; 
     },
 
     sensorCriticalValues:function(Alert,eventType) {
@@ -130,12 +130,12 @@ var app = {
         console.log('got a message');
         console.log("Device Event from :: "+deviceType+" : "+deviceId+" of event "+eventType+" with payload : "+payload);
         var parsed = JSON.parse(payload);
-        console.log(parsed.Air_temperature);
-        console.log(parsed.humidity);
+        console.log(parsed.Ambient_temperature);
+        console.log(parsed.FertilizerLevel);
         console.log(parsed.soil_moisture);
-        console.log(parsed.soil_temperature);
+        console.log(parsed.LightIntensity);
         if (eventType == "sensor_data")
-        app.sensordisplay(parsed.Air_temperature, parsed.humidity, parsed.soil_moisture, parsed.soil_temperature,deviceType);
+        app.sensordisplay(parsed.Ambient_temperature, parsed.FertilizerLevel, parsed.soil_moisture, parsed.LightIntensity,deviceType);
         else
         app.sensorCriticalValues(parsed.Alert, eventType)
         
