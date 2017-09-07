@@ -116,7 +116,7 @@ def sensorLoop():
 		sensorReadingTime = datetime.datetime.now()
 		message = {"ID":1,"Ambient_temperature": currentAmbientTemperature, "FertilizerLevel":currentFertilizerLevel, "soil_moisture":currentSoilMoisture , "LightIntensity":currentLightIntensity , "Description" : "Values from " + device}
                 event = "sensor_data"
-#        	publishMsg(event,deviceType,deviceId,device,message)
+         	publishMsg(event,deviceType,deviceId,device,message)
 				
                 if currentAmbientTemperature >= CRITICAL_AMBIENT_TEMPERATURE:
 		    criticalLevelReachedTime = datetime.datetime.now()
@@ -124,7 +124,7 @@ def sensorLoop():
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     TempCritical = "TempCritical"
- #                   publishMsg(TempCritical,deviceType,deviceId,device,message)
+#                    publishMsg(TempCritical,deviceType,deviceId,device,message)
 
                 if currentLightIntensity >= CRITICAL_LIGHT_INTENSITY:
 	       	    criticalLevelReachedTime = datetime.datetime.now()
@@ -132,7 +132,7 @@ def sensorLoop():
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     SoilTempCritical = "SoilTempCritical"
-  #                  publishMsg(SoilTempCritical,deviceType,deviceId,device,message)
+#                    publishMsg(SoilTempCritical,deviceType,deviceId,device,message)
 
 				
                 if currentFertilizerLevel <=  CRITICAL_FERTILIZER_LEVEL:
@@ -140,8 +140,8 @@ def sensorLoop():
                     messageBody = "Critical Fertilizer-Level reached for %s at %s, I miss my nutrients, Please provide me sufficient nutients"%(device,criticalLevelReachedTime) 
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
-                    HumidityCritical = "HumidityCritical"
-   #                 publishMsg(HumidityCritical,deviceType,deviceId,device,message)
+#                    HumidityCritical = "HumidityCritical"
+                    publishMsg(HumidityCritical,deviceType,deviceId,device,message)
 
                 if currentSoilMoisture <= CRITICAL_SOIL_MOISTURE_LEVEL:
 		    criticalLevelReachedTime = datetime.datetime.now()
@@ -149,7 +149,7 @@ def sensorLoop():
                     message = {"Alert" : messageBody} 
                     thresholdReached(messageBody)
                     SoilMoistureCritical = "SoilMoistureCritical"
-    #                publishMsg(SoilMoistureCritical,deviceType,deviceId,device,message)
+ #                   publishMsg(SoilMoistureCritical,deviceType,deviceId,device,message)
      	        count = count -1		
     #except Exception as e:
       #  logging.info("This Exception")

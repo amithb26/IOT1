@@ -103,16 +103,18 @@ var app = {
         $soil_moisture = $("#soilMois001"+ "_" + deviceType);
         $lightIntensity = $("#soilTemp001"+ "_" + deviceType);
         $temp[0].innerText = '' +Ambient_temperature ;
-        $humid[0].innerText = '' +FertilizerLevel;
+        $fertLevel[0].innerText = '' +FertilizerLevel;
         $soil_moisture[0].innerText = '' +soil_moisture ;
-        $soil_temp[0].innerText = '' +LightIntensity; 
+        $lightIntensity[0].innerText = '' +LightIntensity; 
     },
 
     sensorCriticalValues:function(Alert,eventType) {
         console.log("In sensor CriticalValues");
         var alerts = [] 
         //if (eventType == "TempCritical")
+        
         alerts.push(Alert)
+        console.log(alerts)
       //  else if (eventType == "SoilTempCritical")
        // else if (eventType == "HumidityCritical")
         //else if (eventType == "SoilMoistureCritical")
